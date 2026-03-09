@@ -1,0 +1,129 @@
+# AES Decryption and ECC Digital Signature
+
+## Overview
+
+This project demonstrates several cryptographic operations using Python and the PyCryptodome library:
+
+1. Identifying the correct symmetric key using SHA-256.
+2. Decrypting an AES-128 encrypted message in CBC mode.
+3. Generating an asymmetric Elliptic Curve key pair.
+4. Creating a digital signature for the decrypted message.
+
+---
+
+## Task Description
+
+A secure but unstable connection transmitted three possible 128-bit symmetric keys.
+Only one of them is correct. The SHA-256 hash of the correct key is provided.
+
+The task is to:
+
+1. Identify the correct symmetric key.
+2. Use it to decrypt an AES-128 encrypted message.
+3. Generate an Elliptic Curve key pair.
+4. Create a digital signature of the decrypted message.
+
+---
+
+## Technologies Used
+
+- Python
+- PyCryptodome
+
+---
+
+## Installation
+
+Install the required library:
+pip install pycryptodome
+
+
+---
+
+## Steps Performed
+
+### 1. Identifying the Correct Symmetric Key
+
+Three candidate keys were provided in hexadecimal format.
+
+For each key:
+
+- Convert HEX to bytes
+- Calculate the SHA-256 hash
+- Compare it with the provided hash
+
+The key whose hash matches the given SHA-256 value is selected as the correct key.
+
+---
+
+### 2. AES Decryption
+
+The encrypted message was decrypted using:
+
+- AES-128
+- CBC mode
+- Provided initialization vector (IV)
+
+Steps:
+
+1. Convert ciphertext from HEX to bytes
+2. Convert IV from HEX to bytes
+3. Initialize AES cipher in CBC mode
+4. Decrypt the ciphertext
+5. Remove PKCS#7 padding
+
+The result is the original plaintext message.
+
+---
+
+### 3. Generating an Elliptic Curve Key Pair
+
+An asymmetric key pair was generated using the Elliptic Curve:
+
+P-256
+
+
+This produced:
+
+- A private key
+- A public key
+
+The public key is exported in PEM format.
+
+---
+
+### 4. Creating a Digital Signature
+
+To ensure message authenticity:
+
+1. The decrypted plaintext is hashed using SHA-256.
+2. The private ECC key signs the hash using the ECDSA algorithm.
+3. The resulting signature is exported in hexadecimal format.
+
+---
+
+## Output
+
+The program outputs:
+
+- The correct symmetric key
+- The decrypted message
+- The generated public key
+- The digital signature of the message
+
+---
+
+## Cryptographic Concepts Used
+
+- SHA-256 hashing
+- AES-128 encryption
+- CBC block cipher mode
+- PKCS#7 padding
+- Elliptic Curve Cryptography (ECC)
+- ECDSA digital signatures
+
+---
+
+## Author
+
+Leanid Matolka
