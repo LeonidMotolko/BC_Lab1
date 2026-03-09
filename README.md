@@ -153,13 +153,17 @@ python main.py
 
 # Technologies
 
-  Tool           Purpose
+  **Tool** / **Purpose**
   -------------- -------------------------
-  Python         Implementation
-  PyCryptodome   Cryptographic library
-  AES            Symmetric encryption
-  ECC            Asymmetric cryptography
-  ECDSA          Digital signatures
+  Python - Implementation
+
+  PyCryptodome - Cryptographic library
+
+  AES - Symmetric encryption
+
+  ECC - Asymmetric cryptography
+
+  ECDSA - Digital signatures
 
 ------------------------------------------------------------------------
 
